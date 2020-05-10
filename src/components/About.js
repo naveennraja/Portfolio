@@ -5,7 +5,7 @@ class About extends Component {
           description: `I am a human and front end developer with the roots of digital advertising. 
                          Music lover, traveler and book reader. 
                          My expertise is on front end development. 
-                         Currently workinag as  part time security officer at Bidvest Noonan.`
+                         Currently working as  part time security officer at Bidvest Noonan.`
       }
      render() { 
           return (<section className="page-section bg-primary" id="about">
