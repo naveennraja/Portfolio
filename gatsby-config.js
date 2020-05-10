@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: `/gatsby-creative`,
+  pathPrefix: `/Portfolio`,
   siteMetadata: {
     title: `Portfolio Naveen Nata Raja`,
     description: `Naveen Raja portfolio website for front end developers.`,
@@ -24,8 +24,8 @@ module.exports = {
         start_url: `/`,
         background_color: `#6b76ff`,
         theme_color: `#6b76ff`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        display: `minimal-ui`
+        // icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-sass`,

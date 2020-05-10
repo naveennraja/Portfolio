@@ -2,7 +2,6 @@ import React from "react"
 import Scrollspy from "react-scrollspy"
 import { Navbar, Nav } from "react-bootstrap"
 import Scroller from '../gatsby-components/scroller'
-import Avatar from "../../images/Avatar.jpg";
 export default class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -37,9 +36,6 @@ export default class Header extends React.Component {
                   <li className="nav-item">
                     <Nav.Link className={"js-scroll-trigger contact"} href="#contact" onClick={Scroller.handleAnchorScroll}>Contact</Nav.Link>
                   </li>
-                  {/* <li className="nav-item">
-                    <Nav.Link className={"js-scroll-trigger"} href="#blog" onClick={Scroller.handleAnchorScroll}>Blog</Nav.Link>
-                  </li> */}
                 </Scrollspy>
               </Nav>
             </Navbar.Collapse>
@@ -49,8 +45,6 @@ export default class Header extends React.Component {
           <div className="container h-100">
             <div className="row h-100 align-items-center justify-content-center text-center">
               <div className="col-lg-12 align-center">
-                  {/* <img src={Avatar} class="rounded" alt="Naveen"/> */}
-                {/* <img alt="Image goes here"/> */}
                 <p className="text-white-75">Hi, I am </p>
                   <h1 className="text-uppercase text-white font-weight-bold"> Naveen Raja</h1>
                 <hr className="divider my-4"/> 
