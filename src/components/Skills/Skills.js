@@ -1,12 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import commonImage from "./SkillList";
-import Image from '../gatsby-components/image';
+// import Image from '../gatsby-components/image';
 class Skills extends Component {
      state = {  }
      listSkills = (val) => {
           const skills = Object.keys(commonImage[val]).map((key,idx)=>{
                return <div className="col-lg-3 col-md-3 col-sm-4 col-xs-4 text-center skill-img-container" key={key+idx} >
-                              <Image altText={key} className="img-responsive  img-fluid" filename={commonImage[val][key]}/>
+                              <img src={commonImage[val][key]} alt={key}className="img-responsive" />
+                               {/* <Image altText={key} className="img-responsive  img-fluid" filename={commonImage[val][key]}/> */}
                               <h4 className="text-secondary">{key}</h4>
                          </div> 
           }) 

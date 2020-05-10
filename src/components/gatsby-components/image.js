@@ -23,7 +23,6 @@ const Image = props => (
       })
       if (!image)  return null
       const imageFluid = image.node.childImageSharp.fluid
-      console.log(imageFluid);
       return <Img alt={props.altText} title={props.altText} fluid={imageFluid}  className={props.className} />
     }}
   />

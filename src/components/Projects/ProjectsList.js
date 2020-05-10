@@ -5,39 +5,52 @@ import streamlet from "../../images/portfolio/streamy.gif";
 import thesis from "../../images/portfolio/thesis.gif";
 import portfolio from "../../images/portfolio/portfolio.gif";
 import dior from "../../images/portfolio/dior.gif";
+import html5  from "../../images/skills/html5.png"; 
+import css  from "../../images/skills/css3.png";
+import bootstrap  from "../../images/skills/bootstrap.png";
+import sass  from "../../images/skills/sass.png";
+import javascript  from "../../images/skills/javascript.png";
+import jquery  from "../../images/skills/jquery.png";
+import react  from "../../images/skills/react.png";
+import angular  from "../../images/skills/angular.png";
+import nodejs  from "../../images/skills/nodejs.png";
+import amCharts  from "../../images/skills/amCharts.png";
+import gatsby  from "../../images/skills/gatsby.png";
+import mongodb from "../../images/skills/mongodb.png";
+
 const ProjectList ={
      "Dior":{
-          "technologies" : ["html5.png","css3.png","javascript.png"],
+          "technologies" : [html5,css,javascript],
           "giphy":dior,
           "github":"https://github.com/naveennraja/Dior"
      },
      "Snowfall":{
-          "technologies" : ["html5.png","css3.png","jquery.png"],
+          "technologies" : [html5,css,jquery],
           "giphy":snowfall,
           "github":"https://github.com/naveennraja/Dior"
      },
      "Custom Video":{
-          "technologies" : ["html5.png","css3.png","javascript.png"],
+          "technologies" : [html5,css,javascript],
           "giphy":customvideo,
           "github":"https://github.com/naveennraja/HTML5_CustomVideo"
      },
      "Thesis on MWL":{
-          "technologies" : ["mongodb.png","angular.png","amCharts.png","nodejs.png"],
+          "technologies" : [mongodb,angular,amCharts,nodejs],
           "giphy":thesis,
           "github":"https://github.com/naveennraja/ThesisonMWL"
      },
      "Portfolio":{
-          "technologies" : ["sass.png","react.png","amCharts.png","gatsby.png"],
+          "technologies" : [bootstrap,sass,react,amCharts,gatsby],
           "giphy":portfolio,
           "github":""
      },
      "Sandwich Builder": {
-          "technologies" : ["css3.png","javascript.png","react.png"],
+          "technologies" : [css,javascript,react],
           "giphy":sandwich,
           "github":"https://github.com/naveennraja/sandwich-builder"
      },
      "Stream let": {
-          "technologies" : ["javascript.png","react.png","nodejs.png"],
+          "technologies" : [javascript,react,nodejs],
           "giphy":streamlet,
           "github":"https://github.com/naveennraja/streamlet"
      },

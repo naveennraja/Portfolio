@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import ProjectList from "./ProjectsList";
-import Image from '../gatsby-components/image';
+// import Image from '../gatsby-components/image';
 import GithubLink from './GithubLink';
 
 class Project extends Component {
     generateImage = (imgList,classes) => {
        return imgList.map(function(val){
          const altText = val.split(".")[0];
-          return <Image key={altText} filename={val} altText={altText} className={classes}/>
+          return <img src={val} key={altText} alt= {altText} className={classes}/>
+          {/* <Image key={altText} filename={val} altText={altText} className={classes}/> */}
         }); 
     }
      state = {  }
