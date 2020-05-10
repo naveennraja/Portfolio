@@ -1,0 +1,135 @@
+// Base styling for the navbar
+#mainNav {
+	box-shadow: $box-shadow;
+	background-color: $white;
+	transition: background-color 0.2s ease;
+	
+	.navbar-brand {
+		font-family: $font-family-sans-serif;
+		font-weight: $font-weight-bold;
+		color: $gray-900;
+	}
+	.navbar-nav {
+		.nav-item {
+			&.active {
+				.nav-link {
+					color: $primary !important;
+					&:before,
+					&:after {
+						opacity: 1;
+						-webkit-transform: translateX(0px);
+						-moz-transform: translateX(0px);
+						transform: translateX(0px);
+					}
+				}
+			}
+			.nav-link {
+				color: $gray-600;
+				font-family: $font-family-sans-serif;
+				font-weight: $font-weight-bold;
+				font-size: 0.9rem;
+				padding: 0.75rem 0;
+				position: relative;
+				&:hover,
+				&:active {
+					color: $primary;
+					
+				}
+				&:before{
+					content :"{";
+					left: 5px;
+					position: absolute;
+					display: inline-block;
+					opacity: 0;
+					transition: transform 0.5s, opacity 0.2s;
+					transform: translateX(20px);
+				}
+				&:after{
+					content :"}";
+					right: 5px;
+					position: absolute;
+					display: inline-block;
+					opacity: 0;
+					transform: translateX(-20px);
+					transition: transform 0.5s, opacity 0.2s;
+				}
+				&:hover{
+					&:before,
+					&:after {
+						opacity: 1;
+						-webkit-transform: translateX(0px);
+						-moz-transform: translateX(0px);
+						transform: translateX(0px);
+					}
+				}
+			}
+		}
+	}
+	@include media-breakpoint-up(lg) {
+		// Base styling for the navbar - screen sizes greater than the large breakpoint
+		box-shadow: none;
+		background-color: transparent;
+		.navbar-brand {
+			color: fade-out($white, .3);
+			&:hover {
+				color: $white;
+			}
+		}
+		.navbar-nav {
+			.nav-item {
+				.nav-link {
+					color: fade-out($white, .3);
+					padding: 0 1rem;
+					&:hover {
+						color: $white;	
+					}
+				}
+				&:last-child {
+					&.active{
+						.nav-link {
+							padding-right: 0;
+							&:after{
+								right: -10px;
+							}
+						}
+					
+					}
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	// Navbar styling applied when the page is scrolled
+	.site-container.navbar-scrolled #mainNav {
+		box-shadow: $box-shadow;
+		background-color: $white;
+		background-image: linear-gradient(center, transparent, transparent 50%, $white 50%, $white);
+		background-position: 100% 100%;
+    		background-size: 200% 100%;
+    		transition: all 2s ease-in-out;
+		.navbar-brand {
+			color: $gray-900;
+			&:hover {
+				color: $primary;
+			}
+		}
+		.navbar-nav {
+			.nav-item {
+				.nav-link {
+					color: $gray-900;
+					&:hover {
+						color: $primary;
+						
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 768px){
+	#mainNav .navbar-nav .nav-item .nav-link:before{
+		left: -12px;
+	}
+}

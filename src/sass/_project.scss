@@ -1,0 +1,54 @@
+
+.card {
+     border-color:$border-card;
+     .card-img-top{
+          height: 200px;
+          object-fit: contain;
+     }
+     .footer-left{
+          padding-left:0;
+          padding-right:0;
+     .footer-image{
+          display:inline-block;
+          width: 1.5em;
+          height: 1.5em;
+          margin:0.25rem;
+     }
+     .technology-list {
+          img {
+               // width: inherit !important;
+               // height: inherit !important;           
+               object-fit: contain !important;
+          }
+     }
+     .interaction-link{
+          a {
+               cursor: pointer;
+               margin:0.25rem;
+          }
+     }
+     }
+     .footer-right{
+          .fa-2x{
+               font-size: 1.75em !important;
+          }
+     }
+}
+@media (max-width: 768px) {
+     .card{
+          // h5 {
+          //      // font-size: 1em;
+          // }
+     .footer-image{
+          display:inline-block;
+          width: 1.5em !important;
+          height: 1.5em !important;
+          margin:0.25rem !important;
+     }
+     .footer-right{
+          .fa-2x{
+               font-size: 1.75em !important;
+          }
+     }
+     }
+}
