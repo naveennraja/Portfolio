@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class About extends Component {
      state = { 
-          description: `I am a human and front end developer with the roots of digital advertising. 
+          description: `Front end developer with the roots of digital advertising. 
                          Music lover, traveler and book reader. 
                          My expertise is on front end development. 
                          Currently working as  part time security officer at Bidvest Noonan.`

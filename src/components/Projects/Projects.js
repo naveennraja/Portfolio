@@ -5,10 +5,6 @@ import Modal from "../UI/Modal";
 import GithubLink from './GithubLinks';
 
 class Project extends Component {
-  constructor(props){
-    super(props)
-    //this.modalHandler = this.modalHandler.bind(this);
-  }
     generateImage = (imgList,classes) => {
        return imgList.map(function(val){
          const altText = val.split(".")[0];
@@ -26,7 +22,7 @@ class Project extends Component {
         this.setModal(true, gify,clsName);
      }
      setModal = (isShown, currentGif,clsName) => {
-      console.log(currentGif,clsName);
+      //console.log(currentGif,clsName);
         this.setState({ modalShow: isShown, current: currentGif, gifClassName : clsName });
      }
      render() { 

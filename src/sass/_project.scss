@@ -45,13 +45,17 @@
           // }
      .footer-image{
           display:inline-block;
-          width: 1.5em !important;
-          height: 1.5em !important;
+          width: 1em !important;
+          height: 1em !important;
           margin:0.25rem !important;
      }
      .footer-right{
           .fa-2x{
-               font-size: 1.75em !important;
+               font-size: 1.25em !important;
+          }
+          .fa-eye.fa-2x{
+               font-size: 1.25em !important;
+               vertical-align: baseline;
           }
           
      }
