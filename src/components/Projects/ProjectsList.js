@@ -42,7 +42,7 @@ const ProjectList ={
      "Portfolio":{
           "technologies" : [bootstrap,sass,react,amCharts,gatsby],
           "giphy":portfolio,
-          "github":""
+          "github":"https://github.com/naveennraja/Portfolio"
      },
      "Sandwich Builder": {
           "technologies" : [css,javascript,react],

@@ -32,6 +32,10 @@
           .fa-2x{
                font-size: 1.75em !important;
           }
+          .fa-eye.fa-2x{
+               font-size: 1.5em !important;
+               vertical-align: sub;
+          }
      }
 }
 @media (max-width: 768px) {
@@ -49,6 +53,7 @@
           .fa-2x{
                font-size: 1.75em !important;
           }
+          
      }
      }
 }

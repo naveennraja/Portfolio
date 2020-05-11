@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import ProjectList from "./ProjectsList";
 // import Image from '../gatsby-components/image';
-import GithubLink from './GithubLink';
+import Modal from "../UI/Modal";
+import GithubLink from './GithubLinks';
 
 class Project extends Component {
+  constructor(props){
+    super(props)
+    //this.modalHandler = this.modalHandler.bind(this);
+  }
     generateImage = (imgList,classes) => {
        return imgList.map(function(val){
          const altText = val.split(".")[0];
@@ -11,7 +16,19 @@ class Project extends Component {
           {/* <Image key={altText} filename={val} altText={altText} className={classes}/> */}
         }); 
     }
-     state = {  }
+     state = { 
+       modalShow : false,
+       current : "",
+       gifClassName: "",
+     }
+     modalHandler= (gify,clsName,e) => {
+        e.preventDefault()
+        this.setModal(true, gify,clsName);
+     }
+     setModal = (isShown, currentGif,clsName) => {
+      console.log(currentGif,clsName);
+        this.setState({ modalShow: isShown, current: currentGif, gifClassName : clsName });
+     }
      render() { 
       const  classesForList = "footer-image technology-list";
        const list = Object.keys(ProjectList).map((key)=> {
@@ -24,12 +41,15 @@ class Project extends Component {
                                <a href= {github}  rel="noopener noreferrer">{key}</a>
                               </h5>
                           </div>
-                        <div className="card-footer text-muted">
+                        <div className="card-footer">
                             <div className="footer-left align-top float-left">
                               {this.generateImage(technologies,classesForList)}
                             </div>
                             <div className="footer-right align-bottom float-right">
-                              <GithubLink GithubLink = {github} />  
+                              <a className="float-left d-block ml-2 text-secondary" onClick={this.modalHandler.bind(this, giphy ,key)}>
+                                  <i className={`fas fa-2x mb-3 fa-eye`}> </i>
+                               </a> 
+                              <GithubLink GithubLink = {github}  className="float-right"/>  
                             </div>
                             <div className="clearfix"></div>
                         </div>
@@ -41,28 +61,19 @@ class Project extends Component {
              <div className="container ">
                 <h2 className="text-primary mt-0 text-center">Projects!</h2>
                 <hr className="divider my-4"/>
+                <Modal/>
                 <div className="row ">
                   {list}                  
                 </div>
               </div>
+              <Modal show={this.state.modalShow} onHide={() => this.setModal(false, 0)}>
+                  <img  src={this.state.current} className={this.state.gifClassName} alt={this.state.gifClassName}/>
+                {/* <PortfolioCarousel images={this.props.data.images.edges} current={this.state.modalCurrent}/> */}
+              </Modal>
           </section>
+          
         );
      }
 }
  
 export default Project;
-export const imageData = graphql`
-  query {
-    images: allFile(filter: {relativePath: {glob: "portfolio/fullsize/*.jpg"}}, sort: {fields: name}) {
-      edges {
-        node {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
-  }
-`

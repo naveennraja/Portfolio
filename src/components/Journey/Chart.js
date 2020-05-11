@@ -25,6 +25,7 @@ class Chart extends Component {
                chart.yAxisRadius = am4core.percent(15);
                chart.yAxisInnerRadius = am4core.percent(-25);
                chart.maskBullets = false;
+               //chart.zoomFactor =1;
                // Creating a colorset
           let colorSet = new am4core.ColorSet();
                colorSet.saturation = 1;
@@ -175,7 +176,10 @@ class Chart extends Component {
                cursor.lineX.strokeOpacity = 1;
                dateAxis.renderer.tooltipLocation2 = 0;
                categoryAxis.cursorTooltipEnabled = true;
-               chart.zoomOutButton.disabled = true;
+               chart.seriesContainer.draggable = false;
+               chart.zoomOutButton.disabled = false;
+               chart.seriesContainer.events.disableType("dragged");
+               chart.chartContainer.background.events.disableType("dragged");
           //this.chart = chart;
           
      }
@@ -188,7 +192,7 @@ class Chart extends Component {
           }
      }
      render() { 
-          return ( <div id="chartdiv" style={{ width: "90vw", height: "90vh" }}></div>     );
+          return ( <div id="chartdiv" style={{ width: "100vw", height: "90vh" }}></div>     );
      }
 }
  
