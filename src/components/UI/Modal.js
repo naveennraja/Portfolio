@@ -5,7 +5,7 @@ import { Modal } from "react-bootstrap"
 import "./_modal.scss"
 
 const PortfolioModal = ({ show, onHide, children }) => {
-  console.log(show,onHide,children);
+  //console.log(show,onHide,children);
   return (
     <Modal
       show={show}
@@ -22,10 +22,10 @@ const PortfolioModal = ({ show, onHide, children }) => {
   );
 }
 
-// PortfolioModal.propTypes = {
-//   show: PropTypes.bool.isRequired,
-//   onHide: PropTypes.func.isRequired,
-//   children: PropTypes.node.isRequired
-// }
+PortfolioModal.propTypes = {
+  show: PropTypes.bool.isRequired,
+  onHide: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired
+}
 
 export default PortfolioModal
