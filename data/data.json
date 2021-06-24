@@ -1,0 +1,181 @@
+{
+     "introDescription": {
+          "description": "Front end developer with the roots of digital advertising. <br /> Working as part time security officer at Bidvest Noonan.",
+          "interests": [
+               "listening to music",
+               "reading & creating quotes",
+               "app building",
+               "reading books"
+          ]
+     },
+     "journey": {
+          "chartData": [
+               {
+                    "category": "Part Time",
+                    "start": "2019-10-10",
+                    "end": "2020-10-10",
+                    "text": "I am working as part time Security Officer  at Bidvest Noonan! Looking for a new job after my masters",
+                    "color": "colorSet.getIndex(15)",
+                    "icon": "securityIcon"
+               },
+               {
+                    "category": "Study",
+                    "start": "2019-10-10",
+                    "end": "2019-10-10",
+                    "text": "Yeay ! Completed My Graduation in 2019 November!",
+                    "color": "colorSet.getIndex(13)",
+                    "icon": "graduateIcon"
+               },
+               {
+                    "category": "Study",
+                    "start": "2018-09-09",
+                    "end": "2019-10-10",
+                    "text": "I had a dream of doing Masters. Started pursuing on M.Sc in Advanced Software Development.",
+                    "color": "colorSet.getIndex(11)",
+                    "icon": "universityIcon"
+               },
+               {
+                    "category": "Work",
+                    "start": "2016-08-01",
+                    "end": "2018-08-30",
+                    "text": "The responsibility increased based on my performanace Management and Coding combined with a small team. Team Lead at Jivox",
+                    "color": "colorSet.getIndex(9)",
+                    "icon": "promotionIcon"
+               },
+               {
+                    "category": "Work",
+                    "start": "2014-07-21",
+                    "end": "2016-07-30",
+                    "text": "First Professional change! Wanted to explore more on javascript.started working with Jivox as Widget Engineer",
+                    "color": "colorSet.getIndex(7)",
+                    "icon": "jobIcon"
+               },
+               {
+                    "category": "Work",
+                    "start": "2012-08-01",
+                    "end": "2014-07-11",
+                    "text": "Starting my Career as. Associate Developer in Exilant Technologies.  I got trained on multiple technologies but decided front end would be ideal for me",
+                    "color": "colorSet.getIndex(5)",
+                    "icon": "degreeIcon"
+               },
+               {
+                    "category": "Study",
+                    "start": "2009-08-01",
+                    "end": "2012-07-01",
+                    "text": "Next Step was on Bachelors in Computer Science",
+                    "color": "colorSet.getIndex(3)",
+                    "icon": "diplomaIcon"
+               },
+               {
+                    "category": "Study",
+                    "start": "2005-07-11",
+                    "end": "2009-01-01",
+                    "color": "colorSet.getIndex(1)",
+                    "text": "My journey began with diploma in Computer Science",
+                    "textDisabled": true,
+                    "icon": "startIcon"
+               }
+          ]
+     },
+     "quotes": {
+          "quoteList": [
+               "A person who comes up with a qoute will be either inspired by someone or  based on his own experience ",
+               "When solving problems, sometimes you have to think diametrically opposite. You will certainly explore and learn new things. Remember, it is always willingness to learn.",
+               "Even after years, you might see still me coding or playing around with javascript. I am believer in doing  things which i love.",
+               "Everyday you can improve yourself by taking a baby steps from today to tomorrow, see the changes and thank yourself for the smallest changes  you've got it done.",
+               "A problem can be solved in 'n' different ways. First solve the problem,  try to optimise the solution as much as you can. You may learn something new there as well.",
+               "To ace around any programming language, sport or a hobbies. You have to deep dive and  play around with it regularly. Believe me this works."
+          ]
+     },
+     "skills": {
+          "html": ["html5", "jsx"],
+          "css": ["css3", "bootstrap", "reactBootstrap", "sass"],
+          "javascript": [
+               "javascript",
+               "jquery",
+               "react",
+               "angular",
+               "nodejs",
+               "amCharts",
+               "greensock",
+               "gatsby"
+          ],
+          "tools": ["visualStudio", "Webstorm", "BBEdit"]
+     },
+     "projects": [
+          {
+               "Dior": {
+                    "technologies": ["html5", "css", "javascript"],
+                    "giphy": "dior",
+                    "preview": "https://naveennraja.github.io/Dior/",
+                    "github": "https://github.com/naveennraja/Dior"
+               },
+               "Snowfall": {
+                    "technologies": ["html5", "css", "jquery"],
+                    "giphy": "snowfall",
+                    "preview": "https://naveennraja.github.io/Snowfall/",
+                    "github": "https://github.com/naveennraja/Snowfall"
+               },
+               "Custom Video": {
+                    "technologies": ["html5", "css", "javascript"],
+                    "giphy": "customvideo",
+                    "preview": "https://naveennraja.github.io/CustomVideo/",
+                    "github": "https://github.com/naveennraja/CustomVideo"
+               },
+               "Thesis on MWL": {
+                    "technologies": [
+                         "mongodb",
+                         "angular",
+                         "amCharts",
+                         "nodejs"
+                    ],
+                    "giphy": "thesis",
+                    "github": "https://github.com/naveennraja/ThesisonMWL"
+               },
+               "Netflix Clone ": {
+                    "technologies": ["javascript", "react", "nodejs"],
+                    "giphy": "netflixclone",
+                    "preview": "https://netflix-clone-self.web.app/",
+                    "github": "https://github.com/naveennraja/netflix-clone"
+               },
+               "Sandwich Builder": {
+                    "technologies": ["css", "javascript", "react"],
+                    "giphy": "sandwich",
+                    "github": "https://github.com/naveennraja/sandwich-builder"
+               },
+               "Stream let": {
+                    "technologies": ["javascript", "react", "nodejs"],
+                    "giphy": "streamlet",
+                    "github": "https://github.com/naveennraja/streamlet"
+               },
+               "Portfolio": {
+                    "technologies": [
+                         "bootstrap",
+                         "sass",
+                         "react",
+                         "amCharts",
+                         "gatsby"
+                    ],
+                    "giphy": "portfolio",
+                    "github": "https://github.com/naveennraja/Portfolio"
+               },
+               "Chat App": {
+                    "technologies": [
+                         "html5",
+                         "css",
+                         "javascript",
+                         "jquery",
+                         "nodejs"
+                    ],
+                    "giphy": "chatapp",
+                    "github": "https://github.com/naveennraja/chat"
+               },
+               "Connworld": {
+                    "technologies": ["css", "javascript", "react"],
+                    "giphy": "connworld",
+                    "preview": "https://naveennraja.github.io/connworld/#/",
+                    "github": "https://github.com/naveennraja/connworld"
+               }
+          }
+     ]
+}
