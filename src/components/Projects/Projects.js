@@ -1,75 +1,163 @@
-import React, { Component } from 'react';
-import ProjectList from "./ProjectsList";
-// import Image from '../gatsby-components/image';
-import Modal from "../UI/Modal";
-import GithubLink from './GithubLinks';
+import { useState } from 'react'
+import Box from '@mui/material/Box'
+import Container from '@mui/material/Container'
+import Typography from '@mui/material/Typography'
+import Grid from '@mui/material/Grid'
+import Card from '@mui/material/Card'
+import CardMedia from '@mui/material/CardMedia'
+import CardContent from '@mui/material/CardContent'
+import CardActions from '@mui/material/CardActions'
+import IconButton from '@mui/material/IconButton'
+import Tooltip from '@mui/material/Tooltip'
+import Dialog from '@mui/material/Dialog'
+import DialogContent from '@mui/material/DialogContent'
+import DialogTitle from '@mui/material/DialogTitle'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import VisibilityIcon from '@mui/icons-material/Visibility'
+import CloseIcon from '@mui/icons-material/Close'
+import OpenInNewIcon from '@mui/icons-material/OpenInNew'
+import ProjectList from './ProjectsList'
 
-class Project extends Component {
-    generateImage = (imgList,classes) => {
-       return imgList.map(function(val){
-         const altText = val.split(".")[0];
-          return <img src={val} key={altText} alt= {altText} className={classes}/>
-          {/* <Image key={altText} filename={val} altText={altText} className={classes}/> */}
-        }); 
-    }
-     state = { 
-       modalShow : false,
-       current : "",
-       gifClassName: "",
-     }
-     modalHandler= (gify,clsName,e) => {
-        e.preventDefault()
-        this.setModal(true, gify,clsName);
-     }
-     setModal = (isShown, currentGif,clsName) => {
-      //console.log(currentGif,clsName);
-        this.setState({ modalShow: isShown, current: currentGif, gifClassName : clsName });
-     }
-     render() { 
-      const  classesForList = "footer-image technology-list";
-       const list = Object.keys(ProjectList).map((key)=> {
-          const {technologies  , github , giphy } = ProjectList[key];
-          return <div className="col-lg-4 col-md-6 col-sm-6 col-xs-6 mb-4" key={key}>
-                  <div className="card border-primary">
-                          <img src={giphy} className="card-img-top object-fit-contain" alt={key}/>
-                          <div className="card-body "> 
-                            <h5 className="card-title text-secondary">
-                               <a href= {github}  rel="noopener noreferrer">{key}</a>
-                              </h5>
-                          </div>
-                        <div className="card-footer">
-                            <div className="footer-left align-top float-left">
-                              {this.generateImage(technologies,classesForList)}
-                            </div>
-                            <div className="footer-right align-bottom float-right">
-                              <a className="float-left d-block ml-2 text-secondary" onClick={this.modalHandler.bind(this, giphy ,key)}>
-                                  <i className={`fas fa-2x mb-3 fa-eye`}> </i>
-                               </a> 
-                              <GithubLink GithubLink = {github}  className="float-right"/>  
-                            </div>
-                            <div className="clearfix"></div>
-                        </div>
-                    </div>  
-                </div>           
-       })
-        return (
-          <section className="page-section" id="projects">
-             <div className="container ">
-                <h2 className="text-primary mt-0 text-center">Projects!</h2>
-                <hr className="divider my-4"/>
-                <Modal/>
-                <div className="row ">
-                  {list}                  
-                </div>
-              </div>
-              <Modal show={this.state.modalShow} onHide={() => this.setModal(false, 0)}>
-                  <img  src={this.state.current} className={this.state.gifClassName} alt={this.state.gifClassName}/>
-                {/* <PortfolioCarousel images={this.props.data.images.edges} current={this.state.modalCurrent}/> */}
-              </Modal>
-          </section>
-          
-        );
-     }
+export default function Projects() {
+  const [preview, setPreview] = useState(null)
+
+  const projects = Object.entries(ProjectList)
+
+  return (
+    <Box
+      component="section"
+      id="projects"
+      sx={{ py: { xs: 10, md: 14 }, bgcolor: '#FFFFFF' }}
+    >
+      <Container maxWidth="lg">
+        <Typography
+          variant="overline"
+          sx={{ color: 'primary.main', fontWeight: 600, letterSpacing: '0.15em', display: 'block', mb: 1 }}
+        >
+          Work
+        </Typography>
+        <Typography
+          variant="h2"
+          sx={{ mb: 8, color: 'text.primary', fontSize: { xs: '2rem', md: '2.75rem' } }}
+        >
+          Projects
+        </Typography>
+
+        <Grid container spacing={3}>
+          {projects.map(([name, { technologies, giphy, github, preview: liveUrl }]) => (
+            <Grid item key={name} xs={12} sm={6} md={4}>
+              <Card
+                sx={{
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  border: '1px solid',
+                  borderColor: 'divider',
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  image={giphy}
+                  alt={name}
+                  sx={{ height: 180, objectFit: 'cover', bgcolor: '#F8FAFC' }}
+                />
+
+                <CardContent sx={{ flex: 1, pb: 1 }}>
+                  <Typography variant="h6" fontWeight={600} gutterBottom>
+                    {name}
+                  </Typography>
+                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75, mt: 1 }}>
+                    {technologies.map((techSrc, i) => (
+                      <Box
+                        key={i}
+                        component="img"
+                        src={techSrc}
+                        alt=""
+                        sx={{ width: 22, height: 22, objectFit: 'contain', opacity: 0.8 }}
+                      />
+                    ))}
+                  </Box>
+                </CardContent>
+
+                <CardActions sx={{ px: 2, pb: 2, gap: 0.5 }}>
+                  <Tooltip title="Preview">
+                    <IconButton
+                      size="small"
+                      onClick={() => setPreview({ name, giphy })}
+                      sx={{ color: 'primary.main' }}
+                    >
+                      <VisibilityIcon fontSize="small" />
+                    </IconButton>
+                  </Tooltip>
+                  <Tooltip title="GitHub">
+                    <IconButton
+                      size="small"
+                      component="a"
+                      href={github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      sx={{ color: 'text.secondary', '&:hover': { color: 'text.primary' } }}
+                    >
+                      <GitHubIcon fontSize="small" />
+                    </IconButton>
+                  </Tooltip>
+                  {liveUrl && (
+                    <Tooltip title="Live Demo">
+                      <IconButton
+                        size="small"
+                        component="a"
+                        href={liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        sx={{ color: 'secondary.main' }}
+                      >
+                        <OpenInNewIcon fontSize="small" />
+                      </IconButton>
+                    </Tooltip>
+                  )}
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+
+      {/* Preview Dialog */}
+      <Dialog
+        open={Boolean(preview)}
+        onClose={() => setPreview(null)}
+        maxWidth="md"
+        fullWidth
+        PaperProps={{ sx: { borderRadius: 3 } }}
+      >
+        {preview && (
+          <>
+            <DialogTitle
+              sx={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                pb: 1,
+              }}
+            >
+              <Typography variant="h6" fontWeight={600}>
+                {preview.name}
+              </Typography>
+              <IconButton onClick={() => setPreview(null)} size="small">
+                <CloseIcon />
+              </IconButton>
+            </DialogTitle>
+            <DialogContent sx={{ p: 0 }}>
+              <Box
+                component="img"
+                src={preview.giphy}
+                alt={preview.name}
+                sx={{ width: '100%', display: 'block' }}
+              />
+            </DialogContent>
+          </>
+        )}
+      </Dialog>
+    </Box>
+  )
 }
- 
-export default Project;

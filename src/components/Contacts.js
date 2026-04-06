@@ -1,53 +1,111 @@
-import React,{Component} from 'react';
-import resume from "../documents/Naveen_N_Raja.pdf"
-class Contacts extends Component {
-     state = { 
-          data: {
-               "Phone":{
-                     "text": "+353 894320959",
-                     "link": "callto:+353 894320959",
-                     "classes": "fas fa-phone"
-               },
-               "LinkedIn":{
-                    "text": "LinkedIn",
-                    "link": "https://www.linkedin.com/in/naveennraja/",
-                    "classes": "fab fa-linkedin-in"
-               },
-               "Email":{
-                    "text": "naveennraja@gmail.com",
-                     "link": "mailto:naveennraja@gmail.com",
-                     "classes": "fas fa-envelope"
-               },
-               "Resume": {
-                    "text": "Resume",
-                    "link": `${resume}`,
-                    "classes": "fas fa-file-pdf text-left"
-               }
-          }
-      }
-     render() { 
-          const {data} = this.state;
-          const listDetail =  Object.keys(data).map(key=>{
-               return  <div className="col-lg-6  mb-5 " key={key}>
-                              <i className={`${data[key].classes} fa-3x mb-3 text-primary`}></i>
-                                   <a className="d-block text-secondary" href={data[key].link}>{data[key].text}</a>
-                            </div>
-          });
-          return ( <section className="page-section" id="contact">
-                         <div className="container">
-                              <div className="row justify-content-center">
-                                   <div className="col-lg-8 text-center">
-                                        <h2 className="mt-0 text-primary">Let's Get In Touch!</h2>
-                                        <hr className="divider my-4"/>
-                                        <p className="text-muted mb-5">I'm looking out for roles on front-end developer!</p>
-                                   </div>
-                              </div>
-                              <div className="row text-center ml-auto">
-                                   {listDetail}
-                              </div>
-                         </div>
-                    </section>);
-     }
+import Box from '@mui/material/Box'
+import Container from '@mui/material/Container'
+import Typography from '@mui/material/Typography'
+import Grid from '@mui/material/Grid'
+import Button from '@mui/material/Button'
+import PhoneIcon from '@mui/icons-material/Phone'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import EmailIcon from '@mui/icons-material/Email'
+import DescriptionIcon from '@mui/icons-material/Description'
+import resume from '../documents/Naveen_N_Raja.pdf'
+
+const CONTACTS = [
+  {
+    label: 'Phone',
+    value: '+353 894 320 959',
+    href: 'tel:+353894320959',
+    icon: PhoneIcon,
+  },
+  {
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/naveennraja',
+    href: 'https://www.linkedin.com/in/naveennraja/',
+    icon: LinkedInIcon,
+  },
+  {
+    label: 'Email',
+    value: 'naveennraja@gmail.com',
+    href: 'mailto:naveennraja@gmail.com',
+    icon: EmailIcon,
+  },
+  {
+    label: 'Resume',
+    value: 'Download PDF',
+    href: resume,
+    icon: DescriptionIcon,
+  },
+]
+
+export default function Contacts() {
+  return (
+    <Box
+      component="section"
+      id="contact"
+      sx={{
+        py: { xs: 10, md: 14 },
+        bgcolor: '#0F172A',
+      }}
+    >
+      <Container maxWidth="md" sx={{ textAlign: 'center' }}>
+        <Typography
+          variant="overline"
+          sx={{ color: '#818CF8', fontWeight: 600, letterSpacing: '0.15em', display: 'block', mb: 1 }}
+        >
+          Contact
+        </Typography>
+        <Typography
+          variant="h2"
+          sx={{ mb: 2, color: '#FFFFFF', fontSize: { xs: '2rem', md: '2.75rem' } }}
+        >
+          Let&apos;s Get In Touch
+        </Typography>
+        <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.5)', mb: 8 }}>
+          Open to front-end and full-stack opportunities. Feel free to reach out.
+        </Typography>
+
+        <Grid container spacing={3} justifyContent="center">
+          {CONTACTS.map(({ label, value, href, icon: Icon }) => (
+            <Grid item xs={12} sm={6} key={label}>
+              <Button
+                component="a"
+                href={href}
+                target={label === 'Resume' || label === 'LinkedIn' ? '_blank' : undefined}
+                rel="noopener noreferrer"
+                fullWidth
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: 1.5,
+                  py: 4,
+                  px: 3,
+                  borderRadius: 3,
+                  border: '1px solid rgba(255,255,255,0.08)',
+                  bgcolor: 'rgba(255,255,255,0.03)',
+                  color: 'rgba(255,255,255,0.7)',
+                  textTransform: 'none',
+                  transition: 'border-color 0.2s, background-color 0.2s',
+                  '&:hover': {
+                    bgcolor: 'rgba(99,102,241,0.1)',
+                    borderColor: 'rgba(99,102,241,0.4)',
+                    color: '#FFFFFF',
+                  },
+                }}
+              >
+                <Icon sx={{ fontSize: 32, color: '#818CF8' }} />
+                <Box>
+                  <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.4)', display: 'block', mb: 0.25 }}>
+                    {label}
+                  </Typography>
+                  <Typography variant="body2" fontWeight={500}>
+                    {value}
+                  </Typography>
+                </Box>
+              </Button>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </Box>
+  )
 }
- 
-export default Contacts;

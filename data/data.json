@@ -10,10 +10,18 @@
      },
      "journey": {
           "chartData": [
+                 {
+                    "category": "Front end Developer",
+                    "start": "2019-10-10",
+                    "end": Date.now(),
+                    "text": "I am working as part time Security Officer  at Bidvest Noonan! Looking for a new job after my masters",
+                    "color": "colorSet.getIndex(15)",
+                    "icon": "securityIcon"
+               },
                {
                     "category": "Part Time",
                     "start": "2019-10-10",
-                    "end": "2020-10-10",
+                    "end": "2021-07-30",
                     "text": "I am working as part time Security Officer  at Bidvest Noonan! Looking for a new job after my masters",
                     "color": "colorSet.getIndex(15)",
                     "icon": "securityIcon"

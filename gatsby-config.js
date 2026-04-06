@@ -1,8 +1,8 @@
 module.exports = {
   pathPrefix: `/Portfolio`,
   siteMetadata: {
-    title: `Portfolio Naveen Nata Raja`,
-    description: `Naveen Raja portfolio website for front end developers.`,
+    title: `Naveen Raja — Principal Engineer`,
+    description: `Front end developer portfolio — Naveen Nata Raja, Principal Engineer.`,
     author: `Naveen Nata Raja`,
   },
   plugins: [
@@ -19,26 +19,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Naveen Raja Portfolio`,
+        short_name: `Portfolio`,
         start_url: `/`,
-        background_color: `#6b76ff`,
-        theme_color: `#6b76ff`,
-        display: `minimal-ui`
-        //icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        background_color: `#6366F1`,
+        theme_color: `#6366F1`,
+        display: `minimal-ui`,
+        icon: `src/images/gatsby-icon.png`,
       },
     },
-    `gatsby-plugin-sass`,
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        google: {
-          families: ['Merriweather:400,300,300italic,400italic,700,700italic', 'Merriweather+Sans:400,700']
-        }
-      }
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }

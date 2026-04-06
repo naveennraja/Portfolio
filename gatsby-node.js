@@ -1,20 +1,11 @@
-exports.onCreateWebpackConfig = ({
-     stage,
-     rules,
-     loaders,
-     plugins,
-     actions,
-   }) => {
-     if (stage === "build-html") {
-       actions.setWebpackConfig({
-         module: {
-           rules: [
-             {
-               test: /canvas/,
-               use: loaders.null(),
-             },
-           ],
-         },
-       })
-     }
-   };
+const webpack = require('webpack')
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    plugins: [
+      new webpack.ProvidePlugin({
+        React: 'react',
+      }),
+    ],
+  })
+}

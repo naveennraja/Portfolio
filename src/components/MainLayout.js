@@ -1,70 +1,38 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Header from "./Header/Header"
-import "../sass/layout.scss";
-// import "../layout.scss";
+import React from 'react'
+import PropTypes from 'prop-types'
+import { ThemeProvider } from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import Header from './Header/Header'
+import theme from '../theme'
 
-const getScrollNode = (element) => {
-  return element.ownerDocument.scrollingElement || element.ownerDocument.documentElement
+export default function MainLayout({ children }) {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Box id="page-top" sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <Header />
+        <Box component="main" sx={{ flex: 1 }}>
+          {children}
+        </Box>
+        <Box
+          component="footer"
+          sx={{
+            py: 4,
+            bgcolor: '#0F172A',
+            textAlign: 'center',
+          }}
+        >
+          <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.4)' }}>
+            &copy; {new Date().getFullYear()} Naveen Nata Raja
+          </Typography>
+        </Box>
+      </Box>
+    </ThemeProvider>
+  )
 }
 
-const isScrolled = (element) => {
-  const scrollNode = getScrollNode(element)
-  return scrollNode.scrollTop > 0
-}
-
-export default class Layout extends React.Component {
-  constructor(props) {
-    super(props)
-    this.siteContainer = React.createRef()
-    this.state = {
-      scrolled: false,
-    }
-    this.handleScroll = this.handleScroll.bind(this)
-  }
-
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll)
-    const element = this.siteContainer.current
-    this.setState({
-      scrolled: isScrolled(element),
-    })
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll)
-  }
-
-  handleScroll() {
-    const element = this.siteContainer.current
-    this.setState({
-      scrolled: isScrolled(element),
-    })
-  }
-
-  render() {
-    let className = "site-container"
-    if (this.props.className) className += ` ${this.props.className}`
-    if (this.state.scrolled) className += " navbar-scrolled"
-
-    return (
-      <div
-        className={className}
-        ref={this.siteContainer}
-        id="page-top">
-        <Header/>
-        <main>{this.props.children}</main>
-        <footer className="bg-light py-5">
-          <div className="container">
-            <div className="small text-center text-muted">Copyright &copy; 2020 - Naveen Nata Raja</div>
-          </div>
-        </footer>
-      </div>
-    )
-  }
-}
-
-Layout.propTypes = {
+MainLayout.propTypes = {
   children: PropTypes.node.isRequired,
-  className: PropTypes.string,
 }
