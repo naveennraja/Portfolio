@@ -22,7 +22,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm install && npm install @parcel/watcher-linux-x64-glibc
 
       - name: Build
         run: npm run build
