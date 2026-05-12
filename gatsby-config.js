@@ -7,7 +7,6 @@ module.exports = {
     siteUrl: `https://naveennraja.github.io/Portfolio`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

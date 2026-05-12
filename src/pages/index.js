@@ -9,10 +9,13 @@ import Quotes from '../components/Quotes'
 import MainLayout from '../components/MainLayout'
 import SEO from '../components/gatsby-components/seo'
 
+export function Head() {
+  return <SEO title="Home" />
+}
+
 export default function IndexPage() {
   return (
     <MainLayout>
-      <SEO title="Home" />
       <Highlights />
       <Stats />
       <About />
