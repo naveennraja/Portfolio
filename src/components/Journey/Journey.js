@@ -30,7 +30,7 @@ const JOURNEY = [
   },
   {
     title: 'M.Sc Advanced Software Development',
-    org: 'University',
+    org: 'TU Dublin',
     period: 'Sep 2018 — Oct 2019',
     description: 'Pursued a Masters degree to deepen expertise in software engineering.',
     type: 'education',
@@ -58,14 +58,14 @@ const JOURNEY = [
   },
   {
     title: 'B.Sc Computer Science',
-    org: 'University',
+    org: 'KSIT',
     period: 'Aug 2009 — Jul 2012',
     description: 'Bachelors degree in Computer Science — building the foundation.',
     type: 'education',
   },
   {
     title: 'Diploma in Computer Science',
-    org: 'College',
+    org: 'VET',
     period: 'Jul 2005 — Jan 2009',
     description: 'Where it all began — a diploma in Computer Science.',
     type: 'education',

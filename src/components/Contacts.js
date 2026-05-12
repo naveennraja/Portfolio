@@ -3,19 +3,12 @@ import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
-import PhoneIcon from '@mui/icons-material/Phone'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import EmailIcon from '@mui/icons-material/Email'
 import DescriptionIcon from '@mui/icons-material/Description'
 import resume from '../documents/Naveen_N_Raja.pdf'
 
 const CONTACTS = [
-  {
-    label: 'Phone',
-    value: '+353 894 320 959',
-    href: 'tel:+353894320959',
-    icon: PhoneIcon,
-  },
   {
     label: 'LinkedIn',
     value: 'linkedin.com/in/naveennraja',
@@ -65,11 +58,11 @@ export default function Contacts() {
 
         <Grid container spacing={3} justifyContent="center">
           {CONTACTS.map(({ label, value, href, icon: Icon }) => (
-            <Grid item xs={12} sm={6} key={label}>
+            <Grid item xs={12} sm={4} key={label}>
               <Button
                 component="a"
                 href={href}
-                target={label === 'Resume' || label === 'LinkedIn' ? '_blank' : undefined}
+                target="_blank"
                 rel="noopener noreferrer"
                 fullWidth
                 sx={{

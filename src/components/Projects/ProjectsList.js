@@ -5,54 +5,68 @@ import streamlet from "../../images/portfolio/streamy.gif";
 import thesis from "../../images/portfolio/thesis.gif";
 import portfolio from "../../images/portfolio/portfolio.gif";
 import dior from "../../images/portfolio/dior.gif";
-import html5  from "../../images/skills/html5.png"; 
-import css  from "../../images/skills/css3.png";
-import bootstrap  from "../../images/skills/bootstrap.png";
-import sass  from "../../images/skills/sass.png";
-import javascript  from "../../images/skills/javascript.png";
-import jquery  from "../../images/skills/jquery.png";
-import react  from "../../images/skills/react.png";
-import angular  from "../../images/skills/angular.png";
-import nodejs  from "../../images/skills/nodejs.png";
-import amCharts  from "../../images/skills/amCharts.png";
-import gatsby  from "../../images/skills/gatsby.png";
-import mongodb from "../../images/skills/mongodb.png";
+import { skills } from "../Skills/SkillList";
 
-const ProjectList ={
-     "Dior":{
-          "technologies" : [html5,css,javascript],
-          "giphy":dior,
-          "github":"https://github.com/naveennraja/Dior"
+const { html5, css, javascript, jquery, react, angular, nodejs, amCharts, gatsby, mongodb } = skills
+
+const ProjectList = {
+     "Audit Management Platform": {
+          "description": "A multi-role web application for creating and managing audits across an organisation. Users can assign auditors, track findings, and approve, reject or reissue assets — with role-based access controlling what each user can see and action. Supports organisations ranging from 5 to 100+ users.",
+          "technologies": [react, html5, css, javascript],
+          "giphy": null,
+          "github": null,
+          "private": true,
      },
-     "Snowfall":{
-          "technologies" : [html5,css,jquery],
-          "giphy":snowfall,
-          "github":"https://github.com/naveennraja/Dior"
+     "Field Audit PWA": {
+          "description": "A progressive web app used in the field to carry out audits. Auditors capture photos and GPS location per asset with full offline support — data is stored locally via IndexedDB and syncs automatically once connectivity is restored.",
+          "technologies": [react, html5, css, javascript],
+          "giphy": null,
+          "github": null,
+          "private": true,
      },
-     "Custom Video":{
-          "technologies" : [html5,css,javascript],
-          "giphy":customvideo,
-          "github":"https://github.com/naveennraja/HTML5_CustomVideo"
+     "Product Funding Platform": {
+          "description": "A workflow-driven platform for funding products. Users search product availability, submit detailed funding requests, and route submissions through a role-based verification and approval process. Supports organisations from 5 to 100+ users.",
+          "technologies": [react, html5, css, javascript],
+          "giphy": null,
+          "github": null,
+          "private": true,
      },
-     "Thesis on MWL":{
-          "technologies" : [mongodb,angular,amCharts,nodejs],
-          "giphy":thesis,
-          "github":"https://github.com/naveennraja/ThesisonMWL"
+     "Portfolio (2025)": {
+          "technologies": [react, gatsby, css],
+          "giphy": portfolio,
+          "github": "https://github.com/naveennraja/Portfolio",
+          "preview": "https://naveennraja.github.io/Portfolio"
      },
-     "Portfolio":{
-          "technologies" : [bootstrap,sass,react,amCharts,gatsby],
-          "giphy":portfolio,
-          "github":"https://github.com/naveennraja/Portfolio"
+     "Thesis on MWL": {
+          "technologies": [mongodb, angular, amCharts, nodejs],
+          "giphy": thesis,
+          "github": "https://github.com/naveennraja/ThesisonMWL"
      },
      "Sandwich Builder": {
-          "technologies" : [css,javascript,react],
-          "giphy":sandwich,
-          "github":"https://github.com/naveennraja/sandwich-builder"
+          "technologies": [css, javascript, react],
+          "giphy": sandwich,
+          "github": "https://github.com/naveennraja/sandwich-builder"
      },
      "Stream let": {
-          "technologies" : [javascript,react,nodejs],
-          "giphy":streamlet,
-          "github":"https://github.com/naveennraja/streamlet"
+          "technologies": [javascript, react, nodejs],
+          "giphy": streamlet,
+          "github": "https://github.com/naveennraja/streamlet"
+     },
+     "Dior": {
+          "technologies": [html5, css, javascript],
+          "giphy": dior,
+          "github": "https://github.com/naveennraja/Dior"
+     },
+     "Snowfall": {
+          "technologies": [html5, css, jquery],
+          "giphy": snowfall,
+          "github": "https://github.com/naveennraja/Snowfall"
+     },
+     "Custom Video": {
+          "technologies": [html5, css, javascript],
+          "giphy": customvideo,
+          "github": "https://github.com/naveennraja/HTML5_CustomVideo"
      },
 }
+
 export default ProjectList;

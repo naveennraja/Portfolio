@@ -9,6 +9,7 @@ import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
+import Chip from '@mui/material/Chip'
 import Dialog from '@mui/material/Dialog'
 import DialogContent from '@mui/material/DialogContent'
 import DialogTitle from '@mui/material/DialogTitle'
@@ -16,6 +17,7 @@ import GitHubIcon from '@mui/icons-material/GitHub'
 import VisibilityIcon from '@mui/icons-material/Visibility'
 import CloseIcon from '@mui/icons-material/Close'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
+import LockIcon from '@mui/icons-material/Lock'
 import ProjectList from './ProjectsList'
 
 export default function Projects() {
@@ -44,7 +46,7 @@ export default function Projects() {
         </Typography>
 
         <Grid container spacing={3}>
-          {projects.map(([name, { technologies, giphy, github, preview: liveUrl }]) => (
+          {projects.map(([name, { technologies, giphy, github, preview: liveUrl, description, private: isPrivate }]) => (
             <Grid item key={name} xs={12} sm={6} md={4}>
               <Card
                 sx={{
@@ -55,17 +57,52 @@ export default function Projects() {
                   borderColor: 'divider',
                 }}
               >
-                <CardMedia
-                  component="img"
-                  image={giphy}
-                  alt={name}
-                  sx={{ height: 180, objectFit: 'cover', bgcolor: '#F8FAFC' }}
-                />
+                {/* Image or placeholder */}
+                {giphy ? (
+                  <CardMedia
+                    component="img"
+                    image={giphy}
+                    alt={name}
+                    loading="lazy"
+                    sx={{ height: 180, objectFit: 'cover', bgcolor: '#F8FAFC' }}
+                  />
+                ) : (
+                  <Box
+                    sx={{
+                      height: 180,
+                      background: 'linear-gradient(135deg, #EEF2FF 0%, #E0F2FE 100%)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: 1,
+                    }}
+                  >
+                    <LockIcon sx={{ fontSize: 32, color: 'primary.light', opacity: 0.6 }} />
+                    <Typography variant="caption" sx={{ color: 'text.secondary', fontWeight: 500 }}>
+                      Private — Professional Work
+                    </Typography>
+                  </Box>
+                )}
 
                 <CardContent sx={{ flex: 1, pb: 1 }}>
-                  <Typography variant="h6" fontWeight={600} gutterBottom>
-                    {name}
-                  </Typography>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.5 }}>
+                    <Typography variant="h6" fontWeight={600}>
+                      {name}
+                    </Typography>
+                    {isPrivate && (
+                      <Chip
+                        label="NDA"
+                        size="small"
+                        sx={{ fontSize: '0.65rem', height: 18, bgcolor: '#FEF3C7', color: '#92400E', border: 'none' }}
+                      />
+                    )}
+                  </Box>
+                  {description && (
+                    <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5, lineHeight: 1.6 }}>
+                      {description}
+                    </Typography>
+                  )}
                   <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75, mt: 1 }}>
                     {technologies.map((techSrc, i) => (
                       <Box
@@ -80,27 +117,31 @@ export default function Projects() {
                 </CardContent>
 
                 <CardActions sx={{ px: 2, pb: 2, gap: 0.5 }}>
-                  <Tooltip title="Preview">
-                    <IconButton
-                      size="small"
-                      onClick={() => setPreview({ name, giphy })}
-                      sx={{ color: 'primary.main' }}
-                    >
-                      <VisibilityIcon fontSize="small" />
-                    </IconButton>
-                  </Tooltip>
-                  <Tooltip title="GitHub">
-                    <IconButton
-                      size="small"
-                      component="a"
-                      href={github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      sx={{ color: 'text.secondary', '&:hover': { color: 'text.primary' } }}
-                    >
-                      <GitHubIcon fontSize="small" />
-                    </IconButton>
-                  </Tooltip>
+                  {giphy && (
+                    <Tooltip title="Preview">
+                      <IconButton
+                        size="small"
+                        onClick={() => setPreview({ name, giphy })}
+                        sx={{ color: 'primary.main' }}
+                      >
+                        <VisibilityIcon fontSize="small" />
+                      </IconButton>
+                    </Tooltip>
+                  )}
+                  {github && (
+                    <Tooltip title="GitHub">
+                      <IconButton
+                        size="small"
+                        component="a"
+                        href={github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        sx={{ color: 'text.secondary', '&:hover': { color: 'text.primary' } }}
+                      >
+                        <GitHubIcon fontSize="small" />
+                      </IconButton>
+                    </Tooltip>
+                  )}
                   {liveUrl && (
                     <Tooltip title="Live Demo">
                       <IconButton

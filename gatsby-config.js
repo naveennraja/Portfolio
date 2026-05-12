@@ -4,6 +4,7 @@ module.exports = {
     title: `Naveen Raja — Principal Engineer`,
     description: `Front end developer portfolio — Naveen Nata Raja, Principal Engineer.`,
     author: `Naveen Nata Raja`,
+    siteUrl: `https://naveennraja.github.io/Portfolio`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

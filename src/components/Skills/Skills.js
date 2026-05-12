@@ -4,9 +4,14 @@ import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
 import Chip from '@mui/material/Chip'
 import Tooltip from '@mui/material/Tooltip'
-import Avatar from '@mui/material/Avatar'
 import LayersIcon from '@mui/icons-material/Layers'
 import InstallMobileIcon from '@mui/icons-material/InstallMobile'
+import StorageIcon from '@mui/icons-material/Storage'
+import RepeatIcon from '@mui/icons-material/Repeat'
+import MergeTypeIcon from '@mui/icons-material/MergeType'
+import ApiIcon from '@mui/icons-material/Api'
+import DataObjectIcon from '@mui/icons-material/DataObject'
+import BuildIcon from '@mui/icons-material/Build'
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import AccountTreeIcon from '@mui/icons-material/AccountTree'
 import TheatersIcon from '@mui/icons-material/Theaters'
@@ -30,18 +35,19 @@ const CHIP_SKILL_SECTIONS = [
     label: 'Libraries & Frameworks',
     skills: [
       { label: 'Material UI (MUI 5)', icon: <LayersIcon sx={{ fontSize: 16 }} /> },
+      { label: 'Redux', icon: <RepeatIcon sx={{ fontSize: 16 }} /> },
       { label: 'Progressive Web Apps', icon: <InstallMobileIcon sx={{ fontSize: 16 }} /> },
+      { label: 'IndexedDB', icon: <StorageIcon sx={{ fontSize: 16 }} /> },
     ],
   },
   {
-    key: 'ai',
-    label: 'AI Tools',
+    key: 'devtools',
+    label: 'Dev Tools & Workflow',
     skills: [
-      { label: 'Claude', avatar: { letter: 'C', bg: '#7C3AED' } },
-      { label: 'Perplexity', avatar: { letter: 'P', bg: '#1A9B7B' } },
-      { label: 'DeepSeek', avatar: { letter: 'D', bg: '#2563EB' } },
-      { label: 'ChatGPT', avatar: { letter: 'G', bg: '#10A37F' } },
-      { label: 'UXpilot', avatar: { letter: 'U', bg: '#F59E0B' } },
+      { label: 'TypeScript', icon: <DataObjectIcon sx={{ fontSize: 16 }} /> },
+      { label: 'Git', icon: <MergeTypeIcon sx={{ fontSize: 16 }} /> },
+      { label: 'REST APIs', icon: <ApiIcon sx={{ fontSize: 16 }} /> },
+      { label: 'Webpack', icon: <BuildIcon sx={{ fontSize: 16 }} /> },
     ],
   },
   {
@@ -145,36 +151,14 @@ export default function Skills() {
           </Box>
         ))}
 
-        {/* Chip sections: Libraries, AI Tools, UX */}
+        {/* Chip sections: Libraries & UX */}
         {CHIP_SKILL_SECTIONS.map(({ key, label, skills }) => (
           <Box key={key} sx={{ mb: 6 }}>
             <SectionLabel>{label}</SectionLabel>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5 }}>
-              {skills.map(({ label: skillLabel, icon, avatar }) =>
-                avatar ? (
-                  <Chip
-                    key={skillLabel}
-                    label={skillLabel}
-                    avatar={
-                      <Avatar
-                        sx={{
-                          bgcolor: `${avatar.bg} !important`,
-                          color: '#FFFFFF !important',
-                          fontSize: '0.65rem !important',
-                          fontWeight: 700,
-                          width: 22,
-                          height: 22,
-                        }}
-                      >
-                        {avatar.letter}
-                      </Avatar>
-                    }
-                    sx={chipSx}
-                  />
-                ) : (
-                  <Chip key={skillLabel} label={skillLabel} icon={icon} sx={chipSx} />
-                )
-              )}
+              {skills.map(({ label: skillLabel, icon }) => (
+                <Chip key={skillLabel} label={skillLabel} icon={icon} sx={chipSx} />
+              ))}
             </Box>
           </Box>
         ))}

@@ -45,9 +45,10 @@ export default function About() {
         <Grid container spacing={6} alignItems="flex-start">
           <Grid item xs={12} md={7}>
             <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-              I&apos;m a front-end developer with roots in digital advertising. Currently working as a
-              Principal Engineer at Checkventory, I build progressive web applications and lead
-              front-end architecture across the organisation.
+              I&apos;m a Principal Engineer at Checkventory, an inventory management SaaS company based
+              in Ireland. I own the front-end architecture across multiple products — building
+              React and Redux applications, progressive web apps with full offline support, and
+              component systems used by teams across the organisation.
             </Typography>
             <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
               Beyond writing code, I actively drive UX improvements — running research sessions,
@@ -56,8 +57,10 @@ export default function About() {
               the people who use it.
             </Typography>
             <Typography variant="body1" color="text.secondary">
-              My journey spans Bangalore to Dublin, from Associate Developer to Principal Engineer.
-              I believe in writing code I&apos;m proud of and continuously pushing myself to learn and grow.
+              My journey spans Bangalore to Dublin — from Associate Developer to Principal Engineer
+              over 10+ years. I believe in writing code I&apos;m proud of and continuously pushing
+              myself to grow. These days I integrate AI tools like Claude and ChatGPT into my
+              daily workflow for code review, research synthesis, and UX analysis.
             </Typography>
           </Grid>
 

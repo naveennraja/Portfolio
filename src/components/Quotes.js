@@ -82,14 +82,6 @@ export default function Quotes() {
           &ldquo;{QUOTES[current]}&rdquo;
         </Typography>
 
-        {/* Attribution */}
-        <Typography
-          variant="body2"
-          sx={{ color: '#818CF8', fontWeight: 600, letterSpacing: '0.1em', mb: 5 }}
-        >
-          — Naveen Raja
-        </Typography>
-
         {/* Controls */}
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 3 }}>
           <IconButton
@@ -109,14 +101,20 @@ export default function Quotes() {
             {QUOTES.map((_, i) => (
               <Box
                 key={i}
+                component="button"
                 onClick={() => { setAnimating(true); setTimeout(() => { setCurrent(i); setAnimating(false) }, 200) }}
+                aria-label={`Go to quote ${i + 1}`}
+                aria-current={i === current ? 'true' : undefined}
                 sx={{
                   width: i === current ? 20 : 6,
                   height: 6,
                   borderRadius: 3,
                   bgcolor: i === current ? '#818CF8' : 'rgba(255,255,255,0.2)',
                   cursor: 'pointer',
+                  border: 'none',
+                  p: 0,
                   transition: 'width 0.3s ease, background-color 0.3s ease',
+                  '&:focus-visible': { outline: '2px solid #818CF8', outlineOffset: 2 },
                 }}
               />
             ))}

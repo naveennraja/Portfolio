@@ -277,7 +277,9 @@ export default function Header() {
 
         {/* Scroll indicator */}
         <Box
+          component="button"
           onClick={() => handleNavClick('about')}
+          aria-label="Scroll to about section"
           sx={{
             position: 'absolute',
             bottom: 32,
@@ -285,11 +287,16 @@ export default function Header() {
             transform: 'translateX(-50%)',
             cursor: 'pointer',
             color: 'rgba(255,255,255,0.3)',
+            background: 'none',
+            border: 'none',
+            p: 0,
             animation: 'bounce 2s infinite',
             '@keyframes bounce': {
               '0%, 100%': { transform: 'translateX(-50%) translateY(0)' },
               '50%': { transform: 'translateX(-50%) translateY(8px)' },
             },
+            '&:hover': { color: 'rgba(255,255,255,0.6)' },
+            '&:focus-visible': { outline: '2px solid rgba(255,255,255,0.4)', borderRadius: 1 },
           }}
         >
           <KeyboardArrowDownIcon fontSize="large" />

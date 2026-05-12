@@ -6,7 +6,7 @@ import Divider from '@mui/material/Divider'
 
 const STATS = [
   { value: '10+', label: 'Years Experience' },
-  { value: '75+', label: 'Ad Campaigns' },
+  { value: '3+', label: 'Apps Delivered' },
   { value: '15+', label: 'Projects Shipped' },
   { value: '3+', label: 'Countries' },
 ]
