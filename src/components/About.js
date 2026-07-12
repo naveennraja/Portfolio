@@ -1,91 +1,140 @@
-import Box from '@mui/material/Box'
-import Container from '@mui/material/Container'
-import Typography from '@mui/material/Typography'
-import Grid from '@mui/material/Grid'
-import Chip from '@mui/material/Chip'
-import MusicNoteIcon from '@mui/icons-material/MusicNote'
-import MenuBookIcon from '@mui/icons-material/MenuBook'
-import FormatQuoteIcon from '@mui/icons-material/FormatQuote'
-import BuildIcon from '@mui/icons-material/Build'
+import Box from "@mui/material/Box"
+import Container from "@mui/material/Container"
+import Typography from "@mui/material/Typography"
+import Grid from "@mui/material/Grid"
+import Chip from "@mui/material/Chip"
+import MusicNoteIcon from "@mui/icons-material/MusicNote"
+import MenuBookIcon from "@mui/icons-material/MenuBook"
+import FormatQuoteIcon from "@mui/icons-material/FormatQuote"
+import BuildIcon from "@mui/icons-material/Build"
 
 const INTERESTS = [
-  { label: 'Listening to music', icon: <MusicNoteIcon sx={{ fontSize: 16 }} /> },
-  { label: 'Reading books', icon: <MenuBookIcon sx={{ fontSize: 16 }} /> },
-  { label: 'Creating quotes', icon: <FormatQuoteIcon sx={{ fontSize: 16 }} /> },
-  { label: 'App building', icon: <BuildIcon sx={{ fontSize: 16 }} /> },
+     {
+          label: "Listening to music",
+          icon: <MusicNoteIcon sx={{ fontSize: 16 }} />,
+     },
+     { label: "Reading books", icon: <MenuBookIcon sx={{ fontSize: 16 }} /> },
+     {
+          label: "Writing quotes",
+          icon: <FormatQuoteIcon sx={{ fontSize: 16 }} />,
+     },
+     {
+          label: "Building side projects",
+          icon: <BuildIcon sx={{ fontSize: 16 }} />,
+     },
 ]
 
 export default function About() {
-  return (
-    <Box
-      component="section"
-      id="about"
-      sx={{
-        py: { xs: 10, md: 14 },
-        bgcolor: '#F8FAFC',
-      }}
-    >
-      <Container maxWidth="md">
-        <Typography
-          variant="overline"
-          sx={{
-            color: 'primary.main',
-            fontWeight: 600,
-            letterSpacing: '0.15em',
-            display: 'block',
-            mb: 1,
-          }}
-        >
-          About Me
-        </Typography>
-        <Typography variant="h2" sx={{ mb: 5, color: 'text.primary', fontSize: { xs: '2rem', md: '2.75rem' } }}>
-          A little about who I am
-        </Typography>
+     return (
+          <Box
+               component="section"
+               id="about"
+               sx={{
+                    py: { xs: 10, md: 14 },
+                    bgcolor: "#F8FAFC",
+               }}
+          >
+               <Container maxWidth="md">
+                    <Typography
+                         variant="overline"
+                         sx={{
+                              color: "primary.main",
+                              fontWeight: 600,
+                              letterSpacing: "0.15em",
+                              display: "block",
+                              mb: 1,
+                         }}
+                    >
+                         About Me
+                    </Typography>
+                    <Typography
+                         variant="h2"
+                         sx={{
+                              mb: 5,
+                              color: "text.primary",
+                              fontSize: { xs: "2rem", md: "2.75rem" },
+                         }}
+                    >
+                         A little about me
+                    </Typography>
 
-        <Grid container spacing={6} alignItems="flex-start">
-          <Grid item xs={12} md={7}>
-            <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-              I&apos;m a Principal Engineer at Checkventory, an inventory management SaaS company based
-              in Ireland. I own the front-end architecture across multiple products — building
-              React and Redux applications, progressive web apps with full offline support, and
-              component systems used by teams across the organisation.
-            </Typography>
-            <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-              Beyond writing code, I actively drive UX improvements — running research sessions,
-              facilitating card sorting, defining personas and use cases, and translating insights
-              into better product experiences. I believe great software starts with understanding
-              the people who use it.
-            </Typography>
-            <Typography variant="body1" color="text.secondary">
-              My journey spans Bangalore to Dublin — from Associate Developer to Principal Engineer
-              over 10+ years. I believe in writing code I&apos;m proud of and continuously pushing
-              myself to grow. These days I integrate AI tools like Claude and ChatGPT into my
-              daily workflow for code review, research synthesis, and UX analysis.
-            </Typography>
-          </Grid>
+                    <Grid container spacing={6} alignItems="flex-start">
+                         <Grid item xs={12} md={7}>
+                              <Typography
+                                   variant="body1"
+                                   color="text.secondary"
+                                   sx={{ mb: 3 }}
+                              >
+                                   I&apos;m a frontend-focused software engineer
+                                   based in Ireland, with experience building
+                                   React and TypeScript applications for
+                                   inventory and workflow-driven products. My
+                                   work spans front-end architecture,
+                                   progressive web apps, offline-first
+                                   experiences, and building interfaces that
+                                   stay reliable in real-world conditions.
+                              </Typography>
+                              <Typography
+                                   variant="body1"
+                                   color="text.secondary"
+                                   sx={{ mb: 3 }}
+                              >
+                                   Alongside delivery, I care deeply about
+                                   product quality and usability. I&apos;ve
+                                   worked on improving user flows through
+                                   testing, automation, UX research, and close
+                                   collaboration with designers, QA, and product
+                                   teams to turn complex requirements into
+                                   practical, user-friendly solutions.
+                              </Typography>
+                              <Typography
+                                   variant="body1"
+                                   color="text.secondary"
+                              >
+                                   Over the years, my journey has taken me from
+                                   Bangalore to Dublin and from early UI
+                                   development into senior front-end and
+                                   full-stack engineering responsibilities. I
+                                   enjoy solving meaningful product problems,
+                                   mentoring where I can, and continuously
+                                   improving how software is designed, built,
+                                   and shipped.
+                              </Typography>
+                         </Grid>
 
-          <Grid item xs={12} md={5}>
-            <Typography variant="h6" sx={{ mb: 2, color: 'text.primary' }}>
-              When I&apos;m not coding
-            </Typography>
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5 }}>
-              {INTERESTS.map(({ label, icon }) => (
-                <Chip
-                  key={label}
-                  label={label}
-                  icon={icon}
-                  variant="outlined"
-                  sx={{
-                    borderColor: 'primary.light',
-                    color: 'text.secondary',
-                    '& .MuiChip-icon': { color: 'primary.main' },
-                  }}
-                />
-              ))}
-            </Box>
-          </Grid>
-        </Grid>
-      </Container>
-    </Box>
-  )
+                         <Grid item xs={12} md={5}>
+                              <Typography
+                                   variant="h6"
+                                   sx={{ mb: 2, color: "text.primary" }}
+                              >
+                                   Outside of work
+                              </Typography>
+                              <Box
+                                   sx={{
+                                        display: "flex",
+                                        flexWrap: "wrap",
+                                        gap: 1.5,
+                                   }}
+                              >
+                                   {INTERESTS.map(({ label, icon }) => (
+                                        <Chip
+                                             key={label}
+                                             label={label}
+                                             icon={icon}
+                                             variant="outlined"
+                                             sx={{
+                                                  borderColor: "primary.light",
+                                                  color: "text.secondary",
+                                                  "& .MuiChip-icon": {
+                                                       color: "primary.main",
+                                                  },
+                                             }}
+                                        />
+                                   ))}
+                              </Box>
+                         </Grid>
+                    </Grid>
+               </Container>
+          </Box>
+     )
 }
