@@ -169,7 +169,15 @@ export default function Projects() {
         onClose={() => setPreview(null)}
         maxWidth="md"
         fullWidth
-        PaperProps={{ sx: { borderRadius: 3 } }}
+        PaperProps={{
+          sx: {
+            borderRadius: 3,
+            maxHeight: '80vh',
+            my: '10vh',
+            display: 'flex',
+            flexDirection: 'column',
+          },
+        }}
       >
         {preview && (
           <>
@@ -188,13 +196,38 @@ export default function Projects() {
                 <CloseIcon />
               </IconButton>
             </DialogTitle>
-            <DialogContent sx={{ p: 0 }}>
+            <DialogContent
+              sx={{
+                p: 0,
+                flex: '1 1 auto',
+                minHeight: 0,
+                display: 'flex',
+                overflow: 'hidden',
+              }}
+            >
               <Box
-                component="img"
-                src={preview.giphy}
-                alt={preview.name}
-                sx={{ width: '100%', display: 'block' }}
-              />
+                sx={{
+                  flex: 1,
+                  minHeight: 0,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <Box
+                  component="img"
+                  src={preview.giphy}
+                  alt={preview.name}
+                  sx={{
+                    maxWidth: '100%',
+                    maxHeight: '100%',
+                    width: 'auto',
+                    height: 'auto',
+                    objectFit: 'contain',
+                    display: 'block',
+                  }}
+                />
+              </Box>
             </DialogContent>
           </>
         )}
