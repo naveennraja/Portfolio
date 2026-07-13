@@ -16,6 +16,7 @@ import gatsby from "../../images/skills/gatsby.png"
 import mongodb from "../../images/skills/mongodb.png"
 import visualStudio from "../../images/skills/visualStudio.png"
 import Webstorm from "../../images/skills/Webstorm.png"
+import cursor from "../../images/skills/cursor.png"
 import BBEdit from "../../images/skills/BBEdit.png"
 
 const commonImage = {
@@ -41,6 +42,7 @@ const commonImage = {
      tools: {
           "Visual Studio": visualStudio,
           Webstorm: Webstorm,
+          Cursor: cursor,
      },
 }
 
@@ -61,6 +63,7 @@ export const skills = {
      mongodb,
      visualStudio,
      Webstorm,
+     cursor,
 }
 
 export default commonImage
