@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import PropTypes from 'prop-types'
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
@@ -9,10 +9,40 @@ import Tooltip from '@mui/material/Tooltip'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import Header from './Header/Header'
-import theme from '../theme'
+import { createAppTheme } from '../theme'
+import { ColorModeContext, STORAGE_KEY } from '../color-mode'
 
 export default function MainLayout({ children }) {
+  // Start in light for a stable SSR/first paint, then reconcile with the
+  // stored choice / system preference after hydration.
+  const [mode, setMode] = useState('light')
+
+  useEffect(() => {
+    const stored = window.localStorage.getItem(STORAGE_KEY)
+    if (stored === 'light' || stored === 'dark') {
+      setMode(stored)
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setMode('dark')
+    }
+  }, [])
+
+  const colorMode = useMemo(
+    () => ({
+      mode,
+      toggleColorMode: () =>
+        setMode((prev) => {
+          const next = prev === 'light' ? 'dark' : 'light'
+          window.localStorage.setItem(STORAGE_KEY, next)
+          return next
+        }),
+    }),
+    [mode]
+  )
+
+  const theme = useMemo(() => createAppTheme(mode), [mode])
+
   return (
+    <ColorModeContext.Provider value={colorMode}>
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box id="page-top" sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
@@ -24,7 +54,7 @@ export default function MainLayout({ children }) {
           component="footer"
           sx={{
             py: 4,
-            bgcolor: '#0F172A',
+            bgcolor: 'background.dark',
             textAlign: 'center',
           }}
         >
@@ -37,8 +67,8 @@ export default function MainLayout({ children }) {
                 rel="noopener noreferrer"
                 size="small"
                 sx={{
-                  color: 'rgba(255,255,255,0.35)',
-                  '&:hover': { color: '#818CF8' },
+                  color: 'text.onDarkMuted',
+                  '&:hover': { color: 'primary.light' },
                 }}
               >
                 <LinkedInIcon fontSize="small" />
@@ -52,20 +82,21 @@ export default function MainLayout({ children }) {
                 rel="noopener noreferrer"
                 size="small"
                 sx={{
-                  color: 'rgba(255,255,255,0.35)',
-                  '&:hover': { color: '#818CF8' },
+                  color: 'text.onDarkMuted',
+                  '&:hover': { color: 'primary.light' },
                 }}
               >
                 <GitHubIcon fontSize="small" />
               </IconButton>
             </Tooltip>
           </Box>
-          <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.4)' }}>
+          <Typography variant="body2" sx={{ color: 'text.onDarkMuted' }}>
             &copy; {new Date().getFullYear()} Naveen Nata Raja
           </Typography>
         </Box>
       </Box>
     </ThemeProvider>
+    </ColorModeContext.Provider>
   )
 }
 

@@ -66,7 +66,7 @@ const CHIP_SKILL_SECTIONS = [
 ]
 
 const chipSx = {
-  bgcolor: '#FFFFFF',
+  bgcolor: 'background.paper',
   border: '1px solid',
   borderColor: 'divider',
   color: 'text.secondary',
@@ -79,7 +79,7 @@ const chipSx = {
   '&:hover': {
     borderColor: 'primary.light',
     boxShadow: '0 4px 12px rgba(99,102,241,0.1)',
-    bgcolor: '#FFFFFF',
+    bgcolor: 'background.paper',
   },
 }
 
@@ -88,7 +88,7 @@ export default function Skills() {
     <Box
       component="section"
       id="skills"
-      sx={{ py: { xs: 10, md: 14 }, bgcolor: '#F8FAFC' }}
+      sx={{ py: { xs: 10, md: 14 }, bgcolor: 'background.default' }}
     >
       <Container maxWidth="lg">
         <Typography
@@ -119,15 +119,16 @@ export default function Skills() {
                         alignItems: 'center',
                         gap: 1.5,
                         p: 2.5,
-                        borderRadius: 3,
-                        bgcolor: '#FFFFFF',
+                        borderRadius: '16px',
+                        bgcolor: 'background.paper',
                         border: '1px solid',
                         borderColor: 'divider',
                         cursor: 'default',
-                        transition: 'border-color 0.2s, box-shadow 0.2s',
+                        transition: 'border-color 0.2s, box-shadow 0.2s, transform 0.2s',
                         '&:hover': {
                           borderColor: 'primary.light',
                           boxShadow: '0 4px 12px rgba(99,102,241,0.1)',
+                          transform: 'translateY(-2px)',
                         },
                       }}
                     >

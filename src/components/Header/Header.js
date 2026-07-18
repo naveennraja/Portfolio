@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import AppBar from "@mui/material/AppBar"
 import Toolbar from "@mui/material/Toolbar"
 import Typography from "@mui/material/Typography"
@@ -12,9 +12,13 @@ import ListItemText from "@mui/material/ListItemText"
 import Box from "@mui/material/Box"
 import Container from "@mui/material/Container"
 import useScrollTrigger from "@mui/material/useScrollTrigger"
+import Tooltip from "@mui/material/Tooltip"
 import MenuIcon from "@mui/icons-material/Menu"
 import CloseIcon from "@mui/icons-material/Close"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
+import LightModeIcon from "@mui/icons-material/LightMode"
+import DarkModeIcon from "@mui/icons-material/DarkMode"
+import { ColorModeContext } from "../../color-mode"
 
 const NAV_ITEMS = [
      { id: "about", label: "About" },
@@ -36,6 +40,7 @@ function scrollToSection(id) {
 export default function Header() {
      const [drawerOpen, setDrawerOpen] = useState(false)
      const [activeSection, setActiveSection] = useState("")
+     const { mode, toggleColorMode } = useContext(ColorModeContext)
 
      const scrolled = useScrollTrigger({
           disableHysteresis: true,
@@ -127,7 +132,7 @@ export default function Header() {
                                         sx={{
                                              color:
                                                   activeSection === item.id
-                                                       ? "#818CF8"
+                                                       ? "primary.light"
                                                        : "rgba(255,255,255,0.75)",
                                              fontWeight:
                                                   activeSection === item.id
@@ -146,6 +151,33 @@ export default function Header() {
                               ))}
                          </Box>
 
+                         <Tooltip
+                              title={
+                                   mode === "dark"
+                                        ? "Switch to light mode"
+                                        : "Switch to dark mode"
+                              }
+                         >
+                              <IconButton
+                                   onClick={toggleColorMode}
+                                   aria-label="Toggle color mode"
+                                   sx={{
+                                        color: "rgba(255,255,255,0.75)",
+                                        ml: { xs: 0, md: 1 },
+                                        "&:hover": {
+                                             color: "#FFFFFF",
+                                             bgcolor: "rgba(255,255,255,0.05)",
+                                        },
+                                   }}
+                              >
+                                   {mode === "dark" ? (
+                                        <LightModeIcon fontSize="small" />
+                                   ) : (
+                                        <DarkModeIcon fontSize="small" />
+                                   )}
+                              </IconButton>
+                         </Tooltip>
+
                          <IconButton
                               sx={{ display: { md: "none" }, color: "#FFFFFF" }}
                               onClick={() => setDrawerOpen(true)}
@@ -160,7 +192,7 @@ export default function Header() {
                     anchor="right"
                     open={drawerOpen}
                     onClose={() => setDrawerOpen(false)}
-                    PaperProps={{ sx: { width: 260, bgcolor: "#0F172A" } }}
+                    PaperProps={{ sx: { width: 260, bgcolor: "background.dark" } }}
                >
                     <Box
                          sx={{
@@ -215,7 +247,7 @@ export default function Header() {
                          display: "flex",
                          alignItems: "center",
                          justifyContent: "center",
-                         bgcolor: "#0F172A",
+                         bgcolor: "background.dark",
                          position: "relative",
                          overflow: "hidden",
                          "&::before": {
@@ -240,7 +272,7 @@ export default function Header() {
                          <Typography
                               variant="body1"
                               sx={{
-                                   color: "#818CF8",
+                                   color: "primary.light",
                                    fontWeight: 500,
                                    letterSpacing: "0.15em",
                                    textTransform: "uppercase",
@@ -309,7 +341,7 @@ export default function Header() {
                          <Typography
                               variant="body2"
                               sx={{
-                                   color: "#A5B4FC",
+                                   color: "primary.lighter",
                                    fontWeight: 500,
                                    letterSpacing: "0.02em",
                                    mb: 5,

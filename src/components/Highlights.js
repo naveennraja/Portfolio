@@ -43,8 +43,8 @@ export default function Highlights() {
           <Box
                component="section"
                sx={{
-                    py: { xs: 8, md: 10 },
-                    bgcolor: "#FFFFFF",
+                    py: { xs: 10, md: 14 },
+                    bgcolor: "background.default",
                }}
           >
                <Container maxWidth="lg">
@@ -56,7 +56,7 @@ export default function Highlights() {
                                              sx={{
                                                   p: 3.5,
                                                   height: "100%",
-                                                  borderRadius: 3,
+                                                  borderRadius: "16px",
                                                   border: "1px solid",
                                                   borderColor: "divider",
                                                   transition:

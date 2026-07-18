@@ -121,7 +121,7 @@ export default function Journey() {
           <Box
                component="section"
                id="experience"
-               sx={{ py: { xs: 10, md: 14 }, bgcolor: "#FFFFFF" }}
+               sx={{ py: { xs: 10, md: 14 }, bgcolor: "background.paper" }}
           >
                <Container maxWidth="md">
                     <Typography
@@ -179,16 +179,21 @@ export default function Journey() {
                                         <Box
                                              sx={{
                                                   p: 2.5,
-                                                  borderRadius: 3,
-                                                  bgcolor: "#F8FAFC",
+                                                  borderRadius: "16px",
+                                                  bgcolor: "background.default",
                                                   border: "1px solid",
                                                   borderColor: item.highlight
                                                        ? "primary.light"
                                                        : "divider",
-                                                  transition: "box-shadow 0.2s",
+                                                  transition:
+                                                       "border-color 0.2s, box-shadow 0.2s, transform 0.2s",
                                                   "&:hover": {
+                                                       borderColor:
+                                                            "primary.light",
                                                        boxShadow:
                                                             "0 4px 12px rgba(0,0,0,0.08)",
+                                                       transform:
+                                                            "translateY(-2px)",
                                                   },
                                              }}
                                         >

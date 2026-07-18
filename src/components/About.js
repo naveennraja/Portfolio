@@ -31,7 +31,7 @@ export default function About() {
                id="about"
                sx={{
                     py: { xs: 10, md: 14 },
-                    bgcolor: "#F8FAFC",
+                    bgcolor: "background.paper",
                }}
           >
                <Container maxWidth="md">

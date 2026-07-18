@@ -37,8 +37,8 @@ export default function Quotes() {
   return (
     <Box
       sx={{
-        py: { xs: 10, md: 12 },
-        bgcolor: '#0F172A',
+        py: { xs: 10, md: 14 },
+        bgcolor: 'background.dark',
         position: 'relative',
         overflow: 'hidden',
         '&::before': {
@@ -67,7 +67,7 @@ export default function Quotes() {
         <Typography
           variant="h5"
           sx={{
-            color: 'rgba(255,255,255,0.85)',
+            color: 'text.onDark',
             fontWeight: 400,
             lineHeight: 1.75,
             fontStyle: 'italic',
@@ -109,7 +109,7 @@ export default function Quotes() {
                   width: i === current ? 20 : 6,
                   height: 6,
                   borderRadius: 3,
-                  bgcolor: i === current ? '#818CF8' : 'rgba(255,255,255,0.2)',
+                  bgcolor: i === current ? 'primary.light' : 'rgba(255,255,255,0.2)',
                   cursor: 'pointer',
                   border: 'none',
                   p: 0,

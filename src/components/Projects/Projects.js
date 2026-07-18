@@ -29,7 +29,7 @@ export default function Projects() {
     <Box
       component="section"
       id="projects"
-      sx={{ py: { xs: 10, md: 14 }, bgcolor: '#FFFFFF' }}
+      sx={{ py: { xs: 10, md: 14 }, bgcolor: 'background.default' }}
     >
       <Container maxWidth="lg">
         <Typography

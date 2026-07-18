@@ -15,7 +15,7 @@ export default function Stats() {
           <Box
                sx={{
                     py: { xs: 5, md: 6 },
-                    bgcolor: "#0F172A",
+                    bgcolor: "background.dark",
                }}
           >
                <Container maxWidth="lg">
@@ -40,7 +40,7 @@ export default function Stats() {
                                              top: "20%",
                                              height: "60%",
                                              width: "1px",
-                                             bgcolor: "rgba(255,255,255,0.08)",
+                                             bgcolor: "dividerOnDark",
                                              display: {
                                                   xs: "none",
                                                   md: "block",
@@ -56,7 +56,7 @@ export default function Stats() {
                                                   xs: "2.1rem",
                                                   md: "2.5rem",
                                              },
-                                             color: "#A5B4FC",
+                                             color: "primary.lighter",
                                              lineHeight: 1,
                                              mb: 1,
                                         }}
@@ -67,11 +67,11 @@ export default function Stats() {
                                    <Typography
                                         variant="body2"
                                         sx={{
-                                             color: "rgba(255,255,255,0.55)",
+                                             color: "text.onDarkSecondary",
                                              fontWeight: 500,
                                              letterSpacing: "0.04em",
                                              textTransform: "uppercase",
-                                             fontSize: "0.72rem",
+                                             fontSize: "0.75rem",
                                         }}
                                    >
                                         {label}

@@ -36,14 +36,16 @@ export default function Contacts() {
                id="contact"
                sx={{
                     py: { xs: 10, md: 14 },
-                    bgcolor: "#0F172A",
+                    bgcolor: "background.dark",
+                    borderTop: "1px solid",
+                    borderColor: "dividerOnDark",
                }}
           >
                <Container maxWidth="md" sx={{ textAlign: "center" }}>
                     <Typography
                          variant="overline"
                          sx={{
-                              color: "#818CF8",
+                              color: "primary.light",
                               fontWeight: 600,
                               letterSpacing: "0.15em",
                               display: "block",
@@ -57,7 +59,7 @@ export default function Contacts() {
                          variant="h2"
                          sx={{
                               mb: 2,
-                              color: "#FFFFFF",
+                              color: "text.onDark",
                               fontSize: { xs: "2rem", md: "2.75rem" },
                          }}
                     >
@@ -67,7 +69,7 @@ export default function Contacts() {
                     <Typography
                          variant="body1"
                          sx={{
-                              color: "rgba(255,255,255,0.55)",
+                              color: "text.onDarkSecondary",
                               mb: 8,
                               maxWidth: 620,
                               mx: "auto",
@@ -107,10 +109,11 @@ export default function Contacts() {
                                              gap: 1.5,
                                              py: 4,
                                              px: 3,
-                                             borderRadius: 3,
-                                             border: "1px solid rgba(255,255,255,0.08)",
+                                             borderRadius: "16px",
+                                             border: "1px solid",
+                                             borderColor: "dividerOnDark",
                                              bgcolor: "rgba(255,255,255,0.03)",
-                                             color: "rgba(255,255,255,0.7)",
+                                             color: "text.onDarkSecondary",
                                              textTransform: "none",
                                              transition:
                                                   "border-color 0.2s, background-color 0.2s",
@@ -118,14 +121,14 @@ export default function Contacts() {
                                                   bgcolor: "rgba(99,102,241,0.1)",
                                                   borderColor:
                                                        "rgba(99,102,241,0.4)",
-                                                  color: "#FFFFFF",
+                                                  color: "text.onDark",
                                              },
                                         }}
                                    >
                                         <Icon
                                              sx={{
                                                   fontSize: 32,
-                                                  color: "#818CF8",
+                                                  color: "primary.light",
                                              }}
                                         />
 
@@ -133,7 +136,7 @@ export default function Contacts() {
                                              <Typography
                                                   variant="caption"
                                                   sx={{
-                                                       color: "rgba(255,255,255,0.4)",
+                                                       color: "text.onDarkMuted",
                                                        display: "block",
                                                        mb: 0.25,
                                                   }}
