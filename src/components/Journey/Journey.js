@@ -51,7 +51,7 @@ const JOURNEY = [
           org: "Jivox",
           period: "Jul 2014 — Jul 2016",
           description:
-               "Built custom widgets, single-page applications, and interactive ad experiences using JavaScript and front-end technologies for major consumer brands.",
+               "Built custom widgets, single-page applications, and animated interactive ad experiences using JavaScript and GSAP for major consumer brands — where every frame had to perform under tight rendering budgets.",
           type: "work",
      },
      {

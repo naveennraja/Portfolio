@@ -319,7 +319,7 @@ export default function Header() {
                                    mb: 1.5,
                               }}
                          >
-                              Senior Frontend Engineer
+                              Senior React Developer · Full-Stack Engineer
                          </Typography>
 
                          <Typography

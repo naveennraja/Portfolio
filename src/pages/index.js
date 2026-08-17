@@ -5,6 +5,7 @@ import Skills from "../components/Skills/Skills"
 import Contact from "../components/Contacts"
 import Journey from "../components/Journey/Journey"
 import Projects from "../components/Projects/Projects"
+import MotionShowcase from "../components/Motion/MotionShowcase"
 import Quotes from "../components/Quotes"
 import MainLayout from "../components/MainLayout"
 import SEO from "../components/gatsby-components/seo"
@@ -21,7 +22,7 @@ export default function IndexPage() {
                <About />
                <Projects />
                <Journey />
-
+               <MotionShowcase />
                <Skills />
                <Quotes />
                <Contact />

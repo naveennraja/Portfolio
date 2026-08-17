@@ -9,7 +9,6 @@ import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
-import Chip from '@mui/material/Chip'
 import Dialog from '@mui/material/Dialog'
 import DialogContent from '@mui/material/DialogContent'
 import DialogTitle from '@mui/material/DialogTitle'
@@ -90,13 +89,6 @@ export default function Projects() {
                     <Typography variant="h6" fontWeight={600}>
                       {name}
                     </Typography>
-                    {isPrivate && (
-                      <Chip
-                        label="NDA"
-                        size="small"
-                        sx={{ fontSize: '0.65rem', height: 18, bgcolor: '#FEF3C7', color: '#92400E', border: 'none' }}
-                      />
-                    )}
                   </Box>
                   {description && (
                     <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5, lineHeight: 1.6 }}>

@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography"
 
 const STATS = [
      { value: "5+", label: "Years with React" },
-     { value: "6+", label: "Years with JavaScript" },
+     { value: "7+", label: "Years with JavaScript" },
      { value: "15+", label: "Projects Delivered" },
      { value: "PWA", label: "Offline-First Experience" },
 ]

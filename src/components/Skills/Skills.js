@@ -19,6 +19,7 @@ import GroupIcon from '@mui/icons-material/Group'
 import AssignmentIcon from '@mui/icons-material/Assignment'
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver'
 import AutoStoriesIcon from '@mui/icons-material/AutoStories'
+import MovieFilterIcon from '@mui/icons-material/MovieFilter'
 import skillImages from './SkillList'
 
 const CATEGORY_LABELS = {
@@ -38,6 +39,7 @@ const CHIP_SKILL_SECTIONS = [
       { label: 'Redux', icon: <RepeatIcon sx={{ fontSize: 16 }} /> },
       { label: 'Progressive Web Apps', icon: <InstallMobileIcon sx={{ fontSize: 16 }} /> },
       { label: 'IndexedDB', icon: <StorageIcon sx={{ fontSize: 16 }} /> },
+      { label: 'GSAP / Motion Design', icon: <MovieFilterIcon sx={{ fontSize: 16 }} /> },
     ],
   },
   {
@@ -88,7 +90,7 @@ export default function Skills() {
     <Box
       component="section"
       id="skills"
-      sx={{ py: { xs: 10, md: 14 }, bgcolor: 'background.default' }}
+      sx={{ py: { xs: 10, md: 14 }, bgcolor: 'background.paper' }}
     >
       <Container maxWidth="lg">
         <Typography
